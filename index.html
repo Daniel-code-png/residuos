@@ -11,6 +11,10 @@
             font-family: 'Inter', sans-serif;
             background-color: #f7f9fc;
         }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
         .section-card {
             background-color: #ffffff;
             border-radius: 1rem;
@@ -87,7 +91,7 @@
 <body class="p-4 md:p-8">
 
     <!-- Contenido Principal de la Infografía -->
-    <div id="infographic-content" class="max-w-4xl mx-auto">
+    <div id="infographic-content" class="container">
         <!-- Header / Title -->
         <div class="header-bg text-white p-6 rounded-t-xl mb-6">
             <h1 class="text-3xl font-extrabold text-center mb-1">
@@ -318,7 +322,7 @@
             <div class="mt-6 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
                 <div class="text-sm font-medium" id="feedback-message"></div>
                 <div class="flex items-center space-x-4">
-                    <p class="text-sm font-medium text-gray-500" id="progress-text">Pregunta 1 de 5</p>
+                    <p class="text-sm font-medium text-gray-500" id="progress-text">Pregunta 1 de 4</p>
                     <!-- El botón siguiente usa clases dinámicas para la visibilidad -->
                     <button id="next-button" onclick="nextQuestion()" class="px-6 py-2 font-bold rounded-full transition duration-300 btn-next-disabled">
                         Siguiente
@@ -337,7 +341,7 @@
         <!-- Área de Resultados (Oculta hasta el final) -->
         <div id="result-area" class="hidden text-center py-10">
             <h3 class="text-3xl font-extrabold mb-4" id="final-message">¡Resultado del Quiz!</h3>
-            <p class="text-6xl font-black text-primary mb-6" id="score-text">0/5</p>
+            <p class="text-6xl font-black text-primary mb-6" id="score-text">0/4</p>
             <p class="text-lg text-gray-700 mb-6" id="feedback-text-final"></p>
             <button onclick="restartQuiz()" class="px-8 py-3 bg-gray-500 text-white font-bold rounded-full shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition duration-300">
                 Volver a la Capacitación
@@ -347,7 +351,7 @@
 
 
     <script>
-        // Array de preguntas y respuestas basado en la infografía
+        // Array de preguntas y respuestas basado en la infografía - REVISADO
         const quizQuestions = [
             {
                 question: "¿Qué color de contenedor está destinado a los residuos APROVECHABLES que están limpios y secos (plástico, papel, metal)?",
@@ -380,20 +384,14 @@
                     { text: "Residuos Comunes de Rechazo (Negro).", isCorrect: false, rationale: "Estos residuos son peligrosos y NO deben ir en el contenedor negro." },
                     { text: "Residuos Pos-Consumo que requieren manejo diferenciado.", isCorrect: true, rationale: "Estos son residuos especiales (Pos-Consumo) que deben llevarse a puntos de acopio dedicados (ej. puntos azules de farmacias)." }
                 ]
-            },
-            {
-                question: "Según la Ruta de Mejora de Unicatólica, ¿cuál es el Eje Estratégico relacionado con la implementación de 'herramientas tecnológicas (apps/sistemas)'?",
-                options: [
-                    { text: "Eje 1: Cultura y Valores.", isCorrect: false, rationale: "Cultura y Valores se enfoca en Educación Ambiental y articulación con el PEI y Laudato Si’." },
-                    { text: "Eje 3: Compromiso Total.", isCorrect: false, rationale: "Compromiso Total se refiere a la acción diaria de la comunidad." },
-                    { text: "Eje 2: Monitoreo y Datos.", isCorrect: true, rationale: "El Eje 2 se centra en implementar tecnología para medir y optimizar la gestión de residuos." }
-                ]
             }
+            // La quinta pregunta anterior se ha ELIMINADO.
         ];
 
         let currentQuestionIndex = 0;
         let score = 0;
         let questionAnswered = false;
+        const totalQuestions = quizQuestions.length; // Ahora es 4
 
         // --- FUNCIONES DE CONTROL DEL QUIZ ---
 
@@ -412,7 +410,7 @@
         }
 
         function loadQuestion() {
-            if (currentQuestionIndex >= quizQuestions.length) {
+            if (currentQuestionIndex >= totalQuestions) {
                 showResult();
                 return;
             }
@@ -428,9 +426,9 @@
             document.getElementById('feedback-message').textContent = '';
             optionsContainer.innerHTML = '';
 
-            // Actualizar textos
+            // Actualizar textos. Se utiliza totalQuestions
             document.getElementById('question-text').textContent = `${currentQuestionIndex + 1}. ${currentQ.question}`;
-            document.getElementById('progress-text').textContent = `Pregunta ${currentQuestionIndex + 1} de ${quizQuestions.length}`;
+            document.getElementById('progress-text').textContent = `Pregunta ${currentQuestionIndex + 1} de ${totalQuestions}`;
 
             // Cargar opciones
             currentQ.options.forEach((option, index) => {
@@ -474,16 +472,17 @@
             selectedButton.classList.remove('border-gray-200'); // Quitar borde genérico
 
             // Mostrar el racional (explicación)
+            // Se utiliza el racional de la opción seleccionada para la explicación, sea correcta o incorrecta.
             document.getElementById('rationale-text').textContent = selectedOption.rationale;
             document.getElementById('rationale-box').classList.remove('hidden');
 
-            // Habilitar y dar estilo al botón de siguiente (SOLUCIÓN AL BOTÓN INVISIBLE)
+            // Habilitar y dar estilo al botón de siguiente
             const nextButton = document.getElementById('next-button');
             nextButton.classList.remove('btn-next-disabled');
             nextButton.classList.add('btn-next-active');
             
             // Cambiar el texto si es la última pregunta
-            if (currentQuestionIndex === quizQuestions.length - 1) {
+            if (currentQuestionIndex === totalQuestions - 1) {
                 nextButton.textContent = 'Ver Resultados';
             }
         }
@@ -495,7 +494,6 @@
         }
 
         function showResult() {
-            const totalQuestions = quizQuestions.length;
             const percentage = (score / totalQuestions) * 100;
             const messageEl = document.getElementById('final-message');
             const feedbackEl = document.getElementById('feedback-text-final');
@@ -510,15 +508,15 @@
             if (percentage === 100) {
                 messageEl.textContent = "¡Felicitaciones! ¡Puntuación Perfecta!";
                 messageEl.classList.add('text-green-600');
-                feedbackEl.textContent = "Demuestras un dominio excepcional del protocolo de gestión de residuos de Unicatólica.";
-            } else if (percentage >= 60) {
+                feedbackEl.textContent = "Demuestras un dominio excepcional del protocolo de clasificación de residuos.";
+            } else if (percentage >= 50) { // Criterio de aprobación modificado para 4 preguntas
                 messageEl.textContent = "¡Buen Trabajo!";
                 messageEl.classList.add('text-yellow-600');
-                feedbackEl.textContent = "Has entendido los conceptos clave. Un repaso rápido a las preguntas falladas te ayudará a lograr la excelencia.";
+                feedbackEl.textContent = "Has entendido los conceptos clave del Código de Colores. ¡Sigue así!";
             } else {
                 messageEl.textContent = "A Seguir Practicando...";
                 messageEl.classList.add('text-red-600');
-                feedbackEl.textContent = "Te recomendamos repasar a fondo el Código de Colores. ¡El compromiso ambiental es crucial!";
+                feedbackEl.textContent = "Te recomendamos repasar a fondo la sección del Código de Colores. ¡Es el paso fundamental!";
             }
         }
 
@@ -526,7 +524,7 @@
             // Volver a la infografía
             document.getElementById('quiz-container').classList.add('hidden');
             document.getElementById('infographic-content').classList.remove('hidden');
-            window.scrollTo({ top: document.getElementById('quiz-start-area').offsetTop, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
