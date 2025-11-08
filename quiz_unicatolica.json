@@ -1,0 +1,276 @@
+{
+  "title": "Evaluación Rápida: Manejo de Residuos Unicatólica",
+  "instructions": "Responda las siguientes preguntas basadas en la Guía de Gestión de Residuos y el Código de Colores (Res. 2184/2019).",
+  "questions": [
+    {
+      "question": "¿Cuál es el principal diagnóstico identificado en el manejo de residuos sólidos en Unicatólica (Sedes Pance y Meléndez)?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "La ausencia total de puntos ecológicos y contenedores de basura.",
+          "rationale": "El informe menciona que la infraestructura existe, pero requiere ser optimizada, no que haya una ausencia total.",
+          "isCorrect": false
+        },
+        {
+          "text": "El desconocimiento completo por parte de la comunidad sobre la importancia del reciclaje.",
+          "rationale": "El informe indica que la comunidad sí conoce la importancia, pero falla en la aplicación del hábito diario.",
+          "isCorrect": false
+        },
+        {
+          "text": "La necesidad de mayor capacitación y sensibilización constante para transformar el conocimiento en hábitos.",
+          "rationale": "Esta es la conclusión principal del diagnóstico: existe conocimiento, pero es insuficiente para generar una cultura de separación efectiva.",
+          "isCorrect": true
+        },
+        {
+          "text": "Una generación de residuos peligrosos por encima del 80% del total.",
+          "rationale": "Aunque se generan residuos peligrosos, el diagnóstico principal se centra en la brecha entre conocimiento y hábito, no en la proporción de peligrosos.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Recuerda, la principal debilidad no fue la falta de conocimiento, sino algo más relacionado con la acción diaria."
+    },
+    {
+      "question": "De acuerdo con el Código de Colores (Resolución 2184 de 2019), ¿en qué color de contenedor se deben depositar las **botellas plásticas** limpias y secas?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Contenedor Negro",
+          "rationale": "El contenedor Negro es para residuos no aprovechables, como papel higiénico y servilletas usadas.",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Verde",
+          "rationale": "El contenedor Verde es para residuos orgánicos aprovechables, como restos de comida.",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Gris",
+          "rationale": "El color Gris no está contemplado en el nuevo código unificado (Res. 2184) para residuos aprovechables.",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Blanco",
+          "rationale": "El color Blanco está destinado a todos los residuos aprovechables, incluyendo plásticos, cartón, vidrio y metal.",
+          "isCorrect": true
+        }
+      ],
+      "hint": "Piensa si el material puede ser transformado en un nuevo producto, y usa el código unificado de tres colores."
+    },
+    {
+      "question": "¿En qué color de contenedor se deben depositar los **restos de comida** (cáscaras de frutas, sobras de alimentos) generados en la cafetería?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Contenedor Negro",
+          "rationale": "Los restos de comida son orgánicos aprovechables (compostables), por lo tanto, no deben ir en el contenedor Negro, que es para no aprovechables.",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Verde",
+          "rationale": "El color Verde se utiliza para los residuos orgánicos aprovechables que pueden ser sometidos a compostaje.",
+          "isCorrect": true
+        },
+        {
+          "text": "Contenedor Blanco",
+          "rationale": "El contenedor Blanco es solo para residuos inorgánicos aprovechables (plástico, papel, etc.).",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Azul",
+          "rationale": "El color Azul no es parte del código unificado de tres colores (Res. 2184) para la separación básica en la fuente.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Este residuo es orgánico y puede convertirse en abono."
+    },
+    {
+      "question": "Uno de los ejes estratégicos de mejora recomendados en el informe se relaciona con la **innovación y el monitoreo**. ¿Qué acción específica se sugiere para este eje?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Construir una nueva planta de tratamiento de residuos peligrosos en la sede Meléndez.",
+          "rationale": "La recomendación se centra en la gestión de la información, no en la construcción de infraestructura de tratamiento compleja.",
+          "isCorrect": false
+        },
+        {
+          "text": "Contratar más personal de limpieza para aumentar la recolección manual.",
+          "rationale": "La mejora es tecnológica y de datos, buscando eficiencia, no necesariamente solo aumento de personal.",
+          "isCorrect": false
+        },
+        {
+          "text": "Implementar herramientas tecnológicas (apps/sistemas) para monitorear la generación y gestión de residuos por zonas.",
+          "rationale": "El uso de tecnología para monitorear, optimizar y tomar decisiones basadas en datos es una recomendación clave de innovación.",
+          "isCorrect": true
+        },
+        {
+          "text": "Eliminar todos los puntos ecológicos y centralizar la basura en un solo lugar.",
+          "rationale": "Esto iría en contra del principio de separación en la fuente que promueve la normativa ambiental.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Este eje se enfoca en cómo utilizar la tecnología para medir la eficiencia del proceso."
+    },
+    {
+      "question": "¿Cuál de los siguientes residuos es considerado **NO APROVECHABLE** y debe ser depositado en el **Contenedor Negro**?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Latas de gaseosa vacías",
+          "rationale": "Las latas de metal son residuos aprovechables y deben ir en el contenedor Blanco.",
+          "isCorrect": false
+        },
+        {
+          "text": "Periódicos y revistas viejas",
+          "rationale": "El papel y cartón limpio son residuos aprovechables y deben ir en el contenedor Blanco.",
+          "isCorrect": false
+        },
+        {
+          "text": "Papel higiénico y servilletas usadas",
+          "rationale": "Estos elementos están contaminados, no son reciclables y, por ende, son clasificados como residuos no aprovechables destinados al contenedor Negro.",
+          "isCorrect": true
+        },
+        {
+          "text": "Botellas de vidrio transparentes",
+          "rationale": "El vidrio es un material aprovechable que debe ser dispuesto en el contenedor Blanco.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Piensa en el tipo de residuo que está contaminado o que, por su composición, no puede entrar en un proceso de reciclaje."
+    },
+    {
+      "question": "El informe destaca que el Plan de Gestión de Residuos debe alinearse con el 'Cuidado de la Casa Común'. ¿A qué documento o marco ético principal de la Iglesia y la Unicatólica hace referencia esta frase?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "La Constitución Política de Colombia",
+          "rationale": "Aunque es parte del marco normativo legal, 'Cuidado de la Casa Común' es una referencia directa al marco ético institucional y eclesiástico.",
+          "isCorrect": false
+        },
+        {
+          "text": "La Encíclica papal Laudato Si’",
+          "rationale": "Laudato Si’ es el documento central que promueve el 'Cuidado de la Casa Común' y es la base ética del enfoque ambiental de la Unicatólica.",
+          "isCorrect": true
+        },
+        {
+          "text": "El Atlas Ambiental de Colombia (IDEAM)",
+          "rationale": "Este es un documento técnico de información ambiental, no el fundamento ético de la institución.",
+          "isCorrect": false
+        },
+        {
+          "text": "La Declaración de Río sobre el Medio Ambiente y el Desarrollo",
+          "rationale": "Es un documento internacional relevante, pero no la referencia ética directa mencionada en el contexto del PEI de Unicatólica.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Busca la referencia al documento escrito por el Papa Francisco sobre ecología integral."
+    },
+    {
+      "question": "Una de las recomendaciones para **optimizar la infraestructura** en los campus es:",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Aumentar el tamaño de los contenedores negros y reducir los blancos.",
+          "rationale": "La optimización se enfoca en la efectividad de la separación, no solo en cambiar el tamaño de los contenedores de no aprovechables.",
+          "isCorrect": false
+        },
+        {
+          "text": "Retirar todos los cestos pequeños de las oficinas y salones.",
+          "rationale": "Si bien la centralización es importante, la recomendación se centra en la señalización y distribución de los puntos ecológicos existentes.",
+          "isCorrect": false
+        },
+        {
+          "text": "Mejorar la señalización y la distribución estratégica de los puntos ecológicos.",
+          "rationale": "El informe concluye que se debe mejorar la señalización y la ubicación de los puntos para evitar confusión y facilitar el acceso.",
+          "isCorrect": true
+        },
+        {
+          "text": "Reemplazar todos los contenedores por unos de acero inoxidable.",
+          "rationale": "El material del contenedor no afecta la gestión de residuos, a diferencia de la señalización y ubicación.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "La optimización se trata de guiar y facilitar la acción del usuario en el punto de disposición."
+    },
+    {
+      "question": "Si un docente desecha una **hoja de papel** que ha sido manchada con aceite de cocina, ¿en qué contenedor debe ir?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Contenedor Blanco, porque sigue siendo papel.",
+          "rationale": "El papel contaminado con grasa o aceite pierde su capacidad de ser reciclado (aprovechable).",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Verde, porque el aceite es de origen orgánico.",
+          "rationale": "El papel manchado con aceite no es apto para compostaje y debe ir con los residuos no aprovechables.",
+          "isCorrect": false
+        },
+        {
+          "text": "Contenedor Negro, como residuo no aprovechable.",
+          "rationale": "El papel contaminado con sustancias como aceite o grasa no puede ser reciclado y se considera un residuo de rechazo o no aprovechable.",
+          "isCorrect": true
+        },
+        {
+          "text": "Contenedor Rojo, por ser un residuo peligroso.",
+          "rationale": "El papel contaminado con aceite de cocina no se clasifica como residuo peligroso (como químicos o infecciosos).",
+          "isCorrect": false
+        }
+      ],
+      "hint": "La contaminación con grasas o aceites cambia el estado de un material aprovechable a uno de rechazo."
+    },
+    {
+      "question": "¿Cuál es el propósito del Eje de **Cultura y Educación** dentro de la ruta de mejora para el manejo de residuos en Unicatólica?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "Crear un nuevo programa académico sobre ingeniería ambiental.",
+          "rationale": "Aunque es valioso, el eje se centra en la formación de toda la comunidad universitaria, no solo en la creación de un programa académico.",
+          "isCorrect": false
+        },
+        {
+          "text": "Asegurar que la conciencia ambiental se convierta en un valor institucional intrínseco a través de la sensibilización permanente.",
+          "rationale": "El objetivo de este eje es consolidar los valores del PEI y Laudato Si' en la práctica diaria mediante la educación constante.",
+          "isCorrect": true
+        },
+        {
+          "text": "Monitorear con cámaras de seguridad la correcta separación por parte de los estudiantes.",
+          "rationale": "Esto corresponde al eje de monitoreo (tecnología), no al eje de cultura y educación.",
+          "isCorrect": false
+        },
+        {
+          "text": "Firmar convenios internacionales para la exportación de residuos plásticos.",
+          "rationale": "Esto es una acción de gestión externa, no el objetivo primario del eje de cultura y educación interna.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Este eje busca cambiar la forma de pensar y actuar de la comunidad a largo plazo."
+    },
+    {
+      "question": "¿Cuál es la principal diferencia de destino entre un residuo clasificado en el Contenedor Blanco y uno clasificado en el Contenedor Verde?",
+      "imageUrl": "",
+      "answerOptions": [
+        {
+          "text": "El Blanco se quema y el Verde va al relleno sanitario.",
+          "rationale": "Ambos buscan aprovechamiento: el Blanco para reciclaje y el Verde para compostaje.",
+          "isCorrect": false
+        },
+        {
+          "text": "El Blanco contiene residuos inorgánicos aprovechables (reciclaje) y el Verde, orgánicos aprovechables (compostaje).",
+          "rationale": "Esta es la distinción fundamental: el Blanco es reciclaje inorgánico (plástico, papel), y el Verde es aprovechamiento orgánico (compostaje).",
+          "isCorrect": true
+        },
+        {
+          "text": "El Blanco se considera peligroso y el Verde no.",
+          "rationale": "Ni el Blanco ni el Verde están destinados a residuos peligrosos; el Rojo o recipientes especiales son para ese fin.",
+          "isCorrect": false
+        },
+        {
+          "text": "Ambos son residuos no aprovechables, pero el Blanco es sólido y el Verde es líquido.",
+          "rationale": "Ambos son residuos sólidos aprovechables, pero para diferentes procesos de transformación (reciclaje vs. compostaje).",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Piensa en el proceso de transformación que sufre cada uno de estos tipos de residuos."
+    }
+  ]
+}

@@ -16,7 +16,7 @@
             border-radius: 1rem;
             box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #017C7F; /* Color principal de Unicatólica (asumido) */
+            border-left: 5px solid #017C7F; /* Color principal de Unicatólica (asumido: Verde Mar) */
             padding: 1.5rem;
         }
         .header-bg {
@@ -38,132 +38,461 @@
             font-size: 1.5rem;
             font-weight: 700;
         }
+        .color-card {
+            border-radius: 0.75rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilos del Quiz */
+        .quiz-option {
+            transition: background-color 0.15s ease, transform 0.1s ease;
+            cursor: pointer;
+        }
+        .quiz-option:hover:not(.disabled) {
+            transform: translateY(-2px);
+            background-color: #f1f5f9;
+        }
+        .selected-correct {
+            background-color: #d1fae5; /* Verde muy claro */
+            border-color: #10b981; /* Verde fuerte */
+        }
+        .selected-incorrect {
+            background-color: #fee2e2; /* Rojo muy claro */
+            border-color: #ef4444; /* Rojo fuerte */
+        }
+        .disabled {
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
-    <!-- Header / Title -->
-    <div class="header-bg text-white p-6 rounded-t-xl mb-6">
-        <h1 class="text-3xl font-extrabold text-center mb-1">
-            GESTIÓN DE RESIDUOS SÓLIDOS
-        </h1>
-        <h2 class="text-xl font-semibold text-center opacity-90">
-            Unicatólica: Diagnóstico y Ruta de Mejora (Sedes Pance y Meléndez)
-        </h2>
+    <!-- Contenido Principal de la Infografía -->
+    <div id="infographic-content">
+        <!-- Header / Title -->
+        <div class="header-bg text-white p-6 rounded-t-xl mb-6">
+            <h1 class="text-3xl font-extrabold text-center mb-1">
+                GUÍA DE GESTIÓN DE RESIDUOS SÓLIDOS
+            </h1>
+            <h2 class="text-xl font-semibold text-center opacity-90">
+                Unicatólica: Separación, Aprovechamiento y Compromiso Ambiental
+            </h2>
+        </div>
+
+        <div class="space-y-8">
+            <!-- 1. Diagnóstico Clave -->
+            <div class="section-card">
+                <h3 class="h-section text-primary mb-3">1. Diagnóstico Clave y Oportunidades</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <div class="flex items-start space-x-3 bg-gray-50 p-3 rounded-lg">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-700">Conocimiento Existente</p>
+                            <p class="text-sm text-gray-600">La comunidad conoce la importancia del reciclaje.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-3 bg-gray-50 p-3 rounded-lg">
+                        <div class="icon-box">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-3 2-3s3 1 3 3-.5 5-2 5l-4-4"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11V6M16 16.5L12 19.5M8 16.5L12 19.5"></path></svg>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-700">Necesidad Prioritaria</p>
+                            <p class="text-sm text-gray-600">Se requiere mayor capacitación y sensibilización constante para transformar hábitos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Retos de Infraestructura y Clasificación -->
+            <div class="section-card">
+                <h3 class="h-section text-primary mb-3">2. Retos de Infraestructura y Clasificación</h3>
+                <div class="flex flex-col md:flex-row gap-6">
+                    
+                    <!-- Reto 1: Infraestructura -->
+                    <div class="md:w-1/2 p-4 border border-gray-100 rounded-lg bg-white">
+                        <div class="icon-box mx-auto mb-3">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h-2m2 0h-2m-2 0h-2m-2 0h-2m-2 0h-2M9 5h6M9 5h6M9 9h6M9 9h6M9 13h6M9 13h6M9 17h6M9 17h6"></path></svg>
+                        </div>
+                        <p class="text-center font-semibold text-lg mb-1">Puntos Ecológicos</p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1 text-left">
+                            <li>Necesidad de optimización en diseño y ubicación.</li>
+                            <li>Mejorar la señalización para evitar confusión.</li>
+                            <li>Asegurar una distribución estratégica en campus.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Reto 2: Clasificación -->
+                    <div class="md:w-1/2 p-4 border border-gray-100 rounded-lg bg-white">
+                        <div class="icon-box mx-auto mb-3">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </div>
+                        <p class="text-center font-semibold text-lg mb-1">Separación en la Fuente</p>
+                        <p class="text-sm text-gray-600 text-center mb-2 font-semibold">Usar el Código de Colores (Res. 2184 de 2019):</p>
+                        <div class="flex justify-center space-x-2 text-xs font-semibold mt-2">
+                            <span class="p-1 rounded text-white" style="background-color: #017C7F;">VERDE (Orgánicos)</span>
+                            <span class="p-1 rounded text-white" style="background-color: #004B8D;">BLANCO (Aprovechables)</span>
+                            <span class="p-1 rounded text-white bg-gray-600">NEGRO (No Aprovechables)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- 3. Ejes de la Ruta de Mejora -->
+            <div class="section-card">
+                <h3 class="h-section text-primary mb-3">3. Ruta de Mejora: 3 Ejes Estratégicos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Eje 1: Educación y Cultura -->
+                    <div class="p-4 bg-blue-50 rounded-lg text-center">
+                        <div class="icon-box mx-auto mb-3" style="background-color: #dbeaff;">
+                            <svg class="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <p class="font-extrabold text-blue-800">CULTURA Y VALORES</p>
+                        <p class="text-sm text-gray-700 mt-1">Fortalecer la Educación Ambiental y articularla con el PEI y la Encíclica Laudato Si’.</p>
+                    </div>
+
+                    <!-- Eje 2: Monitoreo Digital -->
+                    <div class="p-4 bg-green-50 rounded-lg text-center">
+                        <div class="icon-box mx-auto mb-3" style="background-color: #e6f9e6;">
+                            <svg class="w-8 h-8 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-5m6 5v-5m-9 5H6m3 0h6m3 0h3M3 8l4.897 4.897 4.215-4.215L18 17"></path></svg>
+                        </div>
+                        <p class="font-extrabold text-green-800">MONITOREO Y DATOS</p>
+                        <p class="text-sm text-gray-700 mt-1">Implementar herramientas tecnológicas (apps/sistemas) para medir y optimizar la gestión de residuos.</p>
+                    </div>
+
+                    <!-- Eje 3: Compromiso Comunitario -->
+                    <div class="p-4 bg-red-50 rounded-lg text-center">
+                        <div class="icon-box mx-auto mb-3" style="background-color: #ffe6e6;">
+                            <svg class="w-8 h-8 text-red-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-4v-4h-2v4H7M3 10l9-6 9 6-9 6-9-6z"></path></svg>
+                        </div>
+                        <p class="font-extrabold text-red-800">COMPROMISO TOTAL</p>
+                        <p class="text-sm text-gray-700 mt-1">El éxito depende de la acción diaria de estudiantes, docentes y administrativos.</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- 4. Capacitación Práctica - Detallada -->
+            <div class="section-card" style="border-left: 5px solid #004B8D;">
+                <h3 class="h-section text-primary mb-4 text-center">4. CAPACITACIÓN PRÁCTICA: PASOS CLAVE</h3>
+                <p class="text-gray-600 text-center mb-6 max-w-2xl mx-auto font-semibold">El éxito comienza con la separación correcta. Sigue estos tres pasos fundamentales.</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+
+                    <!-- PASO 1: CÓDIGO DE COLORES (Separación en la Fuente) -->
+                    <div class="lg:col-span-1 xl:col-span-2">
+                        <h4 class="text-xl font-extrabold text-gray-800 mb-4 border-b pb-2">Paso 1: Aplicación del Código de Colores (Separación en la Fuente)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            
+                            <!-- BLANCO -->
+                            <div class="color-card bg-white shadow-md border-t-4 border-blue-500">
+                                <p class="w-full py-2 px-1 rounded-t-lg font-extrabold text-white text-lg" style="background-color: #004B8D;">BLANCO</p>
+                                <h5 class="font-bold text-gray-800 mt-3 mb-1 text-base">APROVECHABLES</h5>
+                                <p class="text-xs text-gray-600 mb-2 font-semibold">Deben estar limpios y secos.</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 text-left w-full pl-4">
+                                    <li>Plástico (botellas, envases)</li>
+                                    <li>Papel y Cartón Limpios</li>
+                                    <li>Vidrio y Metal (Latas)</li>
+                                </ul>
+                            </div>
+
+                            <!-- VERDE -->
+                            <div class="color-card bg-green-50 shadow-md border-t-4 border-green-500">
+                                <p class="w-full py-2 px-1 rounded-t-lg font-extrabold text-white text-lg" style="background-color: #017C7F;">VERDE</p>
+                                <h5 class="font-bold text-gray-800 mt-3 mb-1 text-base">ORGÁNICOS APROVECHABLES</h5>
+                                <p class="text-xs text-gray-600 mb-2 font-semibold">Para compostaje y abono.</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 text-left w-full pl-4">
+                                    <li>Restos de Comida / Vegetales</li>
+                                    <li>Desechos de Jardinería</li>
+                                    <li>Borra de Café</li>
+                                </ul>
+                            </div>
+
+                            <!-- NEGRO -->
+                            <div class="color-card bg-gray-100 shadow-md border-t-4 border-gray-600">
+                                <p class="w-full py-2 px-1 rounded-t-lg font-extrabold text-white text-lg bg-gray-800">NEGRO</p>
+                                <h5 class="font-bold text-gray-800 mt-3 mb-1 text-base">NO APROVECHABLES</h5>
+                                <p class="text-xs text-gray-600 mb-2 font-semibold">Basura o rechazo.</p>
+                                <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 text-left w-full pl-4">
+                                    <li>Papel y Cartón Contaminados (Grasa)</li>
+                                    <li>Papel Higiénico / Servilletas Usadas</li>
+                                    <li>Icopor / Chicles / Colillas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PASO 2 Y 3: RESIDUOS ESPECIALES Y ALMACENAMIENTO -->
+                    <div class="lg:col-span-1 xl:col-span-1">
+                        <h4 class="text-xl font-extrabold text-gray-800 mb-4 border-b pb-2">Pasos 2 y 3: Manejo Especializado</h4>
+                        <div class="space-y-4">
+                            
+                            <!-- Residuos Pos-Consumo -->
+                            <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                                <div class="font-bold text-yellow-800 flex items-center mb-2">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 3h.01M19 19H5a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4l2-2h4a2 2 0 012 2v10a2 2 0 01-2 2z"></path></svg>
+                                    <span class="text-lg">Paso 2: Residuos Pos-Consumo</span>
+                                </div>
+                                <p class="text-sm text-gray-700 mb-2">Requieren manejo diferenciado. No van en los puntos ecológicos comunes:</p>
+                                <ul class="list-disc list-inside text-xs text-gray-600 space-y-0.5 pl-2">
+                                    <li class="font-medium text-gray-800">Medicamentos Vencidos: Disponer en los puntos azules de farmacias.</li>
+                                    <li class="font-medium text-gray-800">Pilas y Baterías: Usar contenedores especiales designados.</li>
+                                    <li class="font-medium text-gray-800">Luminarias/Bombillos: Entregar al personal de mantenimiento o puntos de acopio especiales.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Almacenamiento Central -->
+                            <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-500">
+                                <div class="font-bold text-gray-800 flex items-center mb-2">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16M4 21h16M4 3h16"></path></svg>
+                                    <span class="text-lg">Paso 3: Almacenamiento Central</span>
+                                </div>
+                                <p class="text-sm text-gray-700 mb-2">Luego de la separación en la fuente, los residuos llegan al Centro de Acopio Temporal (CAT):</p>
+                                <ul class="list-disc list-inside text-xs text-gray-600 space-y-0.5 pl-2">
+                                    <li class="font-medium text-gray-800">Residuos Comunes (Negro): Recolección diaria para su disposición final.</li>
+                                    <li class="font-medium text-gray-800">Residuos Aprovechables (Blanco): Compactación y entrega a la organización de recicladores formalizada.</li>
+                                    <li class="font-medium text-gray-800">Residuos Orgánicos (Verde): Procesamiento para la elaboración de abono (Compostaje).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Botón de Quiz -->
+            <div class="text-center p-6 bg-white rounded-xl border-t-4 border-primary shadow-lg">
+                <h4 class="text-xl font-bold text-gray-800 mb-4">Unicatólica Sostenible es Compromiso de Todos</h4>
+                <button onclick="startQuiz()" class="px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition duration-300">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    Iniciar Quiz de Verificación
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contenedor del Quiz (Inicialmente Oculto) -->
+    <div id="quiz-container" class="hidden p-6 md:p-10 max-w-3xl mx-auto mt-8 bg-white rounded-xl shadow-2xl">
+        <h2 class="text-2xl font-extrabold text-center mb-6 text-primary border-b pb-3">Quiz de Gestión de Residuos</h2>
+
+        <div id="quiz-area">
+            <!-- La pregunta y las opciones se cargarán aquí -->
+            <div class="text-lg font-semibold text-gray-800 mb-4" id="question-text"></div>
+            
+            <div class="space-y-3" id="options-container">
+                <!-- Opciones -->
+            </div>
+
+            <div class="mt-6 flex justify-between items-center">
+                <p class="text-sm font-medium text-gray-500" id="progress-text">Pregunta 1 de 5</p>
+                <button id="next-button" onclick="nextQuestion()" class="px-6 py-2 bg-gray-300 text-gray-700 font-bold rounded-full transition duration-300 disabled:opacity-50" disabled>
+                    Siguiente
+                </button>
+            </div>
+
+            <!-- Racional/Explicación -->
+            <div id="rationale-box" class="mt-8 p-4 rounded-lg border-l-4 border-gray-400 bg-gray-50 hidden">
+                <p class="font-bold text-gray-700">Explicación:</p>
+                <p id="rationale-text" class="text-sm text-gray-600 mt-1"></p>
+            </div>
+
+        </div>
+
+        <!-- Área de Resultados (Oculta hasta el final) -->
+        <div id="result-area" class="hidden text-center py-10">
+            <h3 class="text-3xl font-extrabold mb-4" id="final-message">¡Resultado del Quiz!</h3>
+            <p class="text-6xl font-black text-primary mb-6" id="score-text">0/5</p>
+            <p class="text-lg text-gray-700 mb-6" id="feedback-text"></p>
+            <button onclick="restartQuiz()" class="px-8 py-3 bg-gray-500 text-white font-bold rounded-full shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition duration-300">
+                Volver a la Infografía
+            </button>
+        </div>
     </div>
 
-    <div class="space-y-8">
-        <!-- 1. Diagnóstico Clave -->
-        <div class="section-card">
-            <h3 class="h-section text-primary mb-3">1. Diagnóstico Clave y Oportunidades</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                
-                <div class="flex items-start space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <div class="icon-box">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Conocimiento -->
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="font-bold text-gray-700">Conocimiento Existente</p>
-                        <p class="text-sm text-gray-600">La comunidad conoce la importancia del reciclaje.</p>
-                    </div>
-                </div>
 
-                <div class="flex items-start space-x-3 bg-gray-50 p-3 rounded-lg">
-                    <div class="icon-box">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Capacitación -->
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-3 2-3s3 1 3 3-.5 5-2 5l-4-4"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11V6M16 16.5L12 19.5M8 16.5L12 19.5"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="font-bold text-gray-700">Necesidad Prioritaria</p>
-                        <p class="text-sm text-gray-600">Se requiere mayor capacitación y sensibilización constante para transformar hábitos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <script>
+        // Array de preguntas y respuestas
+        const quizQuestions = [
+            {
+                question: "¿Qué tipo de residuos deben depositarse en el contenedor BLANCO según la Resolución 2184 de 2019?",
+                options: [
+                    { text: "Orgánicos aprovechables (Restos de comida)", isCorrect: false, rationale: "Los residuos orgánicos aprovechables, como restos de comida y desechos de jardinería, deben ir en la caneca verde." },
+                    { text: "No aprovechables (Papel contaminado, icopor)", isCorrect: false, rationale: "Los residuos que no se pueden reciclar o compostar, como el papel sucio y el icopor, deben ir en la caneca negra." },
+                    { text: "Aprovechables (Plástico, papel limpio, metal, vidrio)", isCorrect: true, rationale: "El color blanco está destinado a todos los residuos aprovechables limpios y secos, como plástico, papel, cartón, vidrio y metal." },
+                    { text: "Residuos especiales (Pilas, luminarias, medicamentos)", isCorrect: false, rationale: "Los residuos especiales o pos-consumo tienen puntos de acopio específicos y no deben mezclarse con los residuos comunes." }
+                ]
+            },
+            {
+                question: "¿Cuál es el destino principal de los residuos depositados en el contenedor de color VERDE?",
+                options: [
+                    { text: "Disposición final en relleno sanitario.", isCorrect: false, rationale: "Este es el destino de los residuos no aprovechables (caneca negra)." },
+                    { text: "Procesamiento para compostaje y abono.", isCorrect: true, rationale: "El color verde es para residuos orgánicos aprovechables (restos de comida, jardinería), cuyo destino es la transformación en abono (compostaje)." },
+                    { text: "Entrega a recicladores formalizados para su venta.", isCorrect: false, rationale: "Este es el destino de los materiales de la caneca blanca (aprovechables secos)." },
+                    { text: "Almacenamiento central para residuos peligrosos.", isCorrect: false, rationale: "Los residuos peligrosos tienen una gestión separada y diferente." }
+                ]
+            },
+            {
+                question: "¿Qué residuos deben desecharse en el contenedor de color NEGRO?",
+                options: [
+                    { text: "Plástico PET y latas de aluminio.", isCorrect: false, rationale: "Estos son materiales aprovechables que deben ir en la caneca blanca." },
+                    { text: "Restos de comida y desechos de jardín.", isCorrect: false, rationale: "Estos son residuos orgánicos aprovechables que deben ir en la caneca verde." },
+                    { text: "Papel y cartón contaminados con grasa, servilletas usadas y colillas.", isCorrect: true, rationale: "El color negro es para residuos no aprovechables o de rechazo, que no pueden ser reciclados ni compostados." },
+                    { text: "Vidrio y metal limpios.", isCorrect: false, rationale: "Estos son materiales aprovechables que deben ir en la caneca blanca." }
+                ]
+            },
+            {
+                question: "Si tienes un medicamento vencido, ¿dónde debes disponerlo correctamente?",
+                options: [
+                    { text: "En el contenedor negro (no aprovechable).", isCorrect: false, rationale: "Los medicamentos vencidos son residuos pos-consumo y su eliminación en la basura común es peligrosa para el ambiente." },
+                    { text: "En el contenedor verde (orgánico).", isCorrect: false, rationale: "El contenedor verde es solo para residuos orgánicos como restos de comida o jardinería." },
+                    { text: "En los puntos azules de acopio especiales ubicados en farmacias.", isCorrect: true, rationale: "Los residuos pos-consumo como medicamentos vencidos deben ir a puntos de acopio especiales para un manejo seguro y diferenciado." },
+                    { text: "En el punto ecológico blanco (aprovechable).", isCorrect: false, rationale: "El contenedor blanco es para reciclables secos como plástico, no para residuos químicos como medicamentos." }
+                ]
+            },
+            {
+                question: "¿Cuál de los siguientes materiales debe estar limpio y seco para ser depositado en la caneca BLANCA?",
+                options: [
+                    { text: "Papel higiénico.", isCorrect: false, rationale: "El papel higiénico es un residuo no aprovechable y va en la caneca negra." },
+                    { text: "Colillas de cigarrillo.", isCorrect: false, rationale: "Las colillas son residuos de rechazo y van en la caneca negra." },
+                    { text: "Botellas de plástico (PET).", isCorrect: true, rationale: "Las botellas de plástico, al ser un material aprovechable, deben estar limpias y secas para su correcto reciclaje y van en la caneca blanca." },
+                    { text: "Servilletas con aceite o grasa.", isCorrect: false, rationale: "El papel o cartón contaminado con grasa se considera no aprovechable y va en la caneca negra." }
+                ]
+            }
+        ];
 
-        <!-- 2. Infraestructura y Clasificación -->
-        <div class="section-card">
-            <h3 class="h-section text-primary mb-3">2. Retos de Infraestructura y Clasificación</h3>
-            <div class="flex flex-col md:flex-row gap-6">
-                
-                <!-- Reto 1: Infraestructura -->
-                <div class="md:w-1/2 p-4 border border-gray-100 rounded-lg bg-white">
-                    <div class="icon-box mx-auto mb-3">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Edificio/Infraestructura -->
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h-2m2 0h-2m-2 0h-2m-2 0h-2m-2 0h-2M9 5h6M9 5h6M9 9h6M9 9h6M9 13h6M9 13h6M9 17h6M9 17h6"></path>
-                        </svg>
-                    </div>
-                    <p class="text-center font-semibold text-lg mb-1">Puntos Ecológicos</p>
-                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                        <li>Necesidad de optimización en diseño y ubicación.</li>
-                        <li>Mejorar la señalización para evitar confusión.</li>
-                        <li>Asegurar una distribución estratégica en campus.</li>
-                    </ul>
-                </div>
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let questionAnswered = false;
 
-                <!-- Reto 2: Clasificación -->
-                <div class="md:w-1/2 p-4 border border-gray-100 rounded-lg bg-white">
-                    <div class="icon-box mx-auto mb-3">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Botes de Basura/Clasificación -->
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                        </svg>
-                    </div>
-                    <p class="text-center font-semibold text-lg mb-1">Separación en la Fuente</p>
-                    <p class="text-sm text-gray-600 text-center mb-2 font-bold">Usar el Código de Colores (Res. 2184 de 2019):</p>
-                    <div class="flex justify-center space-x-2 text-xs font-bold mt-2">
-                        <span class="p-1 rounded text-white" style="background-color: #017C7F;">VERDE (Orgánicos)</span>
-                        <span class="p-1 rounded text-white" style="background-color: #004B8D;">BLANCO (Aprovechables)</span>
-                        <span class="p-1 rounded text-white bg-gray-600">NEGRO (No Aprovechables)</span>
-                    </div>
-                </div>
+        // Función para ocultar la infografía y mostrar el quiz
+        function startQuiz() {
+            document.getElementById('infographic-content').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('result-area').classList.add('hidden');
+            document.getElementById('quiz-area').classList.remove('hidden');
+            currentQuestionIndex = 0;
+            score = 0;
+            loadQuestion();
+        }
 
-            </div>
-        </div>
+        // Función para cargar la pregunta actual
+        function loadQuestion() {
+            if (currentQuestionIndex >= quizQuestions.length) {
+                showResult();
+                return;
+            }
 
-        <!-- 3. Ejes de la Ruta de Mejora -->
-        <div class="section-card">
-            <h3 class="h-section text-primary mb-3">3. Ruta de Mejora: 3 Ejes Estratégicos</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            const currentQ = quizQuestions[currentQuestionIndex];
+            const optionsContainer = document.getElementById('options-container');
+            
+            // Reiniciar estado
+            questionAnswered = false;
+            document.getElementById('next-button').setAttribute('disabled', 'true');
+            document.getElementById('next-button').classList.replace('bg-primary', 'bg-gray-300');
+            document.getElementById('next-button').classList.replace('text-white', 'text-gray-700');
+            document.getElementById('rationale-box').classList.add('hidden');
+            optionsContainer.innerHTML = '';
 
-                <!-- Eje 1: Educación y Cultura -->
-                <div class="p-4 bg-blue-50 rounded-lg text-center">
-                    <div class="icon-box mx-auto mb-3" style="background-color: #dbeaff;">
-                        <svg class="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
-                    </div>
-                    <p class="font-extrabold text-blue-800">CULTURA Y VALORES</p>
-                    <p class="text-sm text-gray-700 mt-1">Fortalecer la Educación Ambiental y articularla con el PEI y la Encíclica Laudato Si’.</p>
-                </div>
+            // Actualizar textos
+            document.getElementById('question-text').textContent = `${currentQuestionIndex + 1}. ${currentQ.question}`;
+            document.getElementById('progress-text').textContent = `Pregunta ${currentQuestionIndex + 1} de ${quizQuestions.length}`;
 
-                <!-- Eje 2: Monitoreo Digital -->
-                <div class="p-4 bg-green-50 rounded-lg text-center">
-                    <div class="icon-box mx-auto mb-3" style="background-color: #e6f9e6;">
-                        <svg class="w-8 h-8 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-5m6 5v-5m-9 5H6m3 0h6m3 0h3M3 8l4.897 4.897 4.215-4.215L18 17"></path></svg>
-                    </div>
-                    <p class="font-extrabold text-green-800">MONITOREO Y DATOS</p>
-                    <p class="text-sm text-gray-700 mt-1">Implementar herramientas tecnológicas (apps/sistemas) para medir y optimizar la gestión de residuos.</p>
-                </div>
+            // Cargar opciones
+            currentQ.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add(
+                    'quiz-option', 'p-4', 'border-2', 'border-gray-200', 'rounded-lg', 'font-medium', 'text-gray-700', 'select-none'
+                );
+                optionDiv.textContent = option.text;
+                optionDiv.setAttribute('data-index', index);
+                optionDiv.onclick = () => selectAnswer(optionDiv, currentQ, option);
+                optionsContainer.appendChild(optionDiv);
+            });
+        }
 
-                <!-- Eje 3: Compromiso Comunitario -->
-                <div class="p-4 bg-red-50 rounded-lg text-center">
-                    <div class="icon-box mx-auto mb-3" style="background-color: #ffe6e6;">
-                        <svg class="w-8 h-8 text-red-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-4v-4h-2v4H7M3 10l9-6 9 6-9 6-9-6z"></path></svg>
-                    </div>
-                    <p class="font-extrabold text-red-800">COMPROMISO TOTAL</p>
-                    <p class="text-sm text-gray-700 mt-1">El éxito depende de la acción diaria de estudiantes, docentes y administrativos.</p>
-                </div>
+        // Función para manejar la selección de respuesta
+        function selectAnswer(selectedDiv, currentQ, selectedOption) {
+            if (questionAnswered) return;
+            questionAnswered = true;
 
-            </div>
-        </div>
+            const allOptions = document.querySelectorAll('.quiz-option');
+            allOptions.forEach(opt => opt.classList.add('disabled')); // Deshabilitar otras opciones
 
-        <!-- Footer / Llamada a la Acción -->
-        <div class="text-center p-6 bg-white rounded-xl border-t-4 border-primary shadow-lg">
-            <h4 class="text-xl font-bold text-gray-800 mb-2">¡Unicatólica Sostenible es Compromiso de Todos!</h4>
-            <p class="text-gray-600">Transformemos juntos nuestro campus en un referente de cuidado de la Casa Común.</p>
-        </div>
-    </div>
+            const isCorrect = selectedOption.isCorrect;
+
+            if (isCorrect) {
+                score++;
+                selectedDiv.classList.add('selected-correct', 'border-green-500');
+                selectedDiv.classList.remove('border-gray-200');
+            } else {
+                selectedDiv.classList.add('selected-incorrect', 'border-red-500');
+                selectedDiv.classList.remove('border-gray-200');
+                // Mostrar la opción correcta
+                const correctOption = currentQ.options.findIndex(opt => opt.isCorrect);
+                allOptions[correctOption].classList.add('selected-correct', 'border-green-500');
+            }
+
+            // Mostrar el racional
+            document.getElementById('rationale-text').textContent = selectedOption.rationale;
+            document.getElementById('rationale-box').classList.remove('hidden');
+
+            // Habilitar botón de siguiente
+            document.getElementById('next-button').removeAttribute('disabled');
+            document.getElementById('next-button').classList.replace('bg-gray-300', 'bg-primary');
+            document.getElementById('next-button').classList.replace('text-gray-700', 'text-white');
+        }
+
+        // Función para avanzar a la siguiente pregunta
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        // Función para mostrar el resultado final
+        function showResult() {
+            const totalQuestions = quizQuestions.length;
+            const percentage = (score / totalQuestions) * 100;
+            const messageEl = document.getElementById('final-message');
+            const feedbackEl = document.getElementById('feedback-text');
+
+            document.getElementById('quiz-area').classList.add('hidden');
+            document.getElementById('result-area').classList.remove('hidden');
+            document.getElementById('score-text').textContent = `${score} de ${totalQuestions}`;
+
+            if (percentage === 100) {
+                messageEl.textContent = "¡Felicitaciones! ¡Puntuación Perfecta!";
+                messageEl.classList.add('text-green-600');
+                feedbackEl.textContent = "Demuestras un dominio excepcional del protocolo de gestión de residuos. ¡Sigue así!";
+            } else if (percentage >= 60) {
+                messageEl.textContent = "¡Buen Trabajo!";
+                messageEl.classList.add('text-yellow-600');
+                feedbackEl.textContent = "Has entendido los conceptos clave. Revisa la infografía para reforzar los puntos que te hicieron falta.";
+            } else {
+                messageEl.textContent = "A Seguir Practicando...";
+                messageEl.classList.add('text-red-600');
+                feedbackEl.textContent = "Te recomendamos repasar a fondo el Código de Colores y el manejo de residuos especiales. ¡El cambio es posible con compromiso!";
+            }
+        }
+
+        // Función para reiniciar el quiz (volver a la infografía)
+        function restartQuiz() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('infographic-content').classList.remove('hidden');
+        }
+
+        // Inicializar el quiz al cargar la página (opcional, si quieres que el botón de quiz esté habilitado inmediatamente)
+        window.onload = () => {
+             // Esto solo asegura que el script está cargado, pero el quiz se inicia con el botón
+        };
+    </script>
 </body>
 </html>
